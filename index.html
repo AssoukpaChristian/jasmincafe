@@ -1,0 +1,1924 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JASMIN CAFé – Unité de production de café en Côte d'Ivoire</title>
+  <meta name="description"
+    content="Découvrez JASMIN CAFé, notre unité de production de café. Savourez l'excellence de notre café ivoirien, de la fève à la tasse." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --coal: #1a1208;
+      --ember: #8b5a2b;
+      /* Modifié pour café */
+      --gold: #DAB85F;
+      /* Modifié selon demande */
+      --cream: #fdf6ec;
+      --smoke: #3d2e1a;
+      --ash: #8a7560;
+      --white: #fff8f0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--coal);
+      color: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4%;
+      background: rgba(13, 10, 4, 0.9);
+      backdrop-filter: blur(8px);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #fff;
+      padding: 0 1.5rem;
+      border-radius: 0 0 25px 25px;
+      height: 110px;
+      align-self: flex-start;
+      margin-top: -1.2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      z-index: 101;
+    }
+
+    .logo-img {
+      height: 85px;
+      /* Taille augmentée */
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-img:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      transition: 0.3s ease;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 110;
+      padding: 5px;
+    }
+
+    .menu-toggle .bar {
+      width: 28px;
+      height: 2px;
+      background-color: var(--cream);
+      transition: 0.3s;
+    }
+
+    .nav-links a {
+      color: #fff;
+      font-size: 1rem;
+      font-family: 'Playfair Display', serif;
+      text-transform: capitalize;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #DAB85F;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .nav-signin {
+      color: #fff;
+      font-size: 0.95rem;
+      font-family: 'Playfair Display', serif;
+      text-decoration: none;
+      transition: 0.3s;
+      font-weight: 500;
+    }
+
+    .nav-signin:hover {
+      color: #DAB85F;
+    }
+
+    .nav-signup {
+      background: #DAB85F;
+      color: #1a1208 !important;
+      font-family: 'Outfit', sans-serif;
+      padding: 0.5rem 1.6rem;
+      border-radius: 30px;
+      font-weight: 600 !important;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .nav-signup:hover {
+      background: #fff;
+      color: #1a1208 !important;
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: #0d0a04;
+      overflow: hidden;
+    }
+
+    /* Updated for Video */
+    .hero-bg-visual {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center;
+    }
+
+    /* Overlay removed from background */
+    .hero-bg-overlay {
+      display: none;
+    }
+
+    .hero-bg::after {
+      display: none;
+    }
+
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 12rem 4% 4rem 4%;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: start;
+      gap: 12rem;
+    }
+
+    .hero-title-main {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: lighter;
+      line-height: 1.1;
+      background: linear-gradient(to bottom, #DAB85F 0%, #B4944A 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-sub-text {
+      text-align: left;
+      font-size: 1.15rem;
+      color: #FBF4EC;
+      line-height: 1.6;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1.5rem;
+      border-radius: 12px;
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: linear-gradient(135deg, #DAB85F 0%, #B4944A 100%);
+      color: #1a1208;
+      padding: 1.2rem 3rem;
+      border-radius: 50px;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(218, 184, 95, 0.4);
+      background: #fff;
+    }
+
+    .hero-part-left {
+      text-align: left;
+    }
+
+    .hero-part-right {
+      text-align: right;
+    }
+
+    @media (max-width: 992px) {
+      #hero {
+        min-height: auto;
+      }
+
+      .hero-bg-visual {
+        object-fit: cover;
+        opacity: 0.45;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 7rem 5% 3rem;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .hero-title-main {
+        font-size: clamp(2rem, 9vw, 3rem);
+        margin-bottom: 0.8rem;
+      }
+
+      .hero-sub-text {
+        text-align: center;
+        font-size: 0.95rem;
+        padding: 1rem;
+        margin: 0 auto 1.5rem;
+        max-width: 100%;
+      }
+
+      .hero-part-left,
+      .hero-part-right {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-content {
+        padding: 6rem 4% 2rem;
+        gap: 0.5rem;
+      }
+
+      .hero-title-main {
+        font-size: clamp(1.8rem, 11vw, 2.5rem);
+      }
+
+      .hero-sub-text {
+        font-size: 0.88rem;
+        padding: 0.9rem;
+        margin-bottom: 1rem;
+      }
+
+      .btn-gold {
+        padding: 0.9rem 2rem;
+        font-size: 0.85rem;
+      }
+
+      .hero-part-right {
+        display: none;
+      }
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ─── SECTION BASE ─── */
+    section {
+      padding: 6rem 4%;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ember);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+    }
+
+    .section-title span {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    #about .section-title {
+      color: var(--coal);
+    }
+
+    .about-text p,
+    .about-text ul {
+      color: #555;
+      line-height: 1.8;
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .about-text ul {
+      padding-left: 1.5rem;
+      list-style-position: outside;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 520px;
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      background: #000;
+      /* Fond noir pendant le chargement */
+    }
+
+    .about-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .about-card {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(to top, rgba(26, 18, 8, 0.95) 0%, rgba(26, 18, 8, 0.4) 100%);
+      padding: 1.2rem 2rem 2.5rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    .about-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+    }
+
+    .about-card p {
+      color: #fff;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* ─── PRODUCTS ─── */
+    #products {
+      background: #FBF4EC;
+      padding: 6rem 4% 4rem;
+    }
+
+    #products .section-title {
+      color: var(--coal);
+    }
+
+    /* ── Intro header (text + image) ── */
+    .products-flex-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 4rem;
+      max-width: 100%;
+      margin: 0 auto 4rem;
+    }
+
+    .products-intro {
+      flex: 1;
+      max-width: 650px;
+    }
+
+    .products-intro .section-label {
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+
+    .products-intro p {
+      color: #411B13;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-top: 1.5rem;
+      font-weight: 400;
+    }
+
+    .products-flex-container>img {
+      width: 450px;
+      height: auto;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    /* ── Mobile category select ── */
+    .products-mobile-select {
+      display: none;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .select-instruction {
+      font-style: italic;
+      color: #421A13;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .products-mobile-select select {
+      width: 100%;
+      padding: 0.9rem 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: #411B13;
+      background: #ffffff;
+      border: 2px solid #CB7E50;
+      border-radius: 10px;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23CB7E50'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 20px;
+      padding-right: 2.5rem;
+      box-shadow: 0 2px 12px rgba(203, 126, 80, 0.12);
+    }
+
+    /* ── Two-column layout ── */
+    .products-layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── Sidebar ── */
+    .products-sidebar {
+      position: sticky;
+      top: 100px;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.8rem 1.4rem;
+      box-shadow: 0 8px 30px rgba(26, 18, 8, 0.10);
+      border: 1px solid rgba(203, 126, 80, 0.12);
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .sidebar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8a7560;
+      margin-bottom: 0.8rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid #FBF4EC;
+    }
+
+    .sidebar-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 0.75rem 1rem;
+      border-radius: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: #411B13;
+      cursor: pointer;
+      transition: background 0.22s, color 0.22s, transform 0.18s;
+      text-align: left;
+      position: relative;
+    }
+
+    .sidebar-btn .sidebar-icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .sidebar-btn:hover {
+      background: #FBF4EC;
+      color: #CB7E50;
+      transform: translateX(4px);
+    }
+
+    .sidebar-btn.active {
+      background: linear-gradient(135deg, #CB7E50 0%, #b56b41 100%);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 4px 14px rgba(203, 126, 80, 0.30);
+    }
+
+    .sidebar-btn.active:hover {
+      transform: translateX(0);
+      color: #fff;
+    }
+
+    .sidebar-divider {
+      height: 1px;
+      background: #FBF4EC;
+      margin: 0.6rem 0;
+    }
+
+    .sidebar-btn-all {
+      margin-top: 0.4rem;
+      border: 2px solid #CB7E50;
+      color: #CB7E50;
+      font-weight: 600;
+    }
+
+    .sidebar-btn-all:hover,
+    .sidebar-btn-all.active {
+      background: #CB7E50;
+      color: #fff;
+    }
+
+    /* ── Products grid pane ── */
+    .products-grid-pane {
+      min-width: 0;
+    }
+
+    .category-group {
+      display: none;
+      flex-direction: column;
+      gap: 1.5rem;
+      animation: fadeIn 0.35s ease;
+    }
+
+    .category-group.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .category-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-style: italic;
+      color: #CB7E50;
+      margin: 2.5rem 0 1.5rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .category-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: #cb7e50;
+      border-radius: 2px;
+    }
+
+    .products-grid-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      width: 100%;
+      justify-content: center;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 992px) {
+      #products {
+        padding-top: 6rem;
+      }
+
+      .products-flex-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .products-flex-container>img {
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .products-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .products-sidebar {
+        display: none;
+      }
+
+      .products-mobile-select {
+        display: block;
+        position: sticky;
+        top: 115px;
+        z-index: 20;
+        background: #FBF4EC;
+        padding: 0.5rem 0;
+        padding-bottom: 0px;
+        margin-top: 10px;
+        margin-left: -4%;
+        margin-right: -4%;
+        padding-left: 4%;
+        padding-right: 4%;
+      }
+    }
+
+    .product-premium-card {
+      background: #250808;
+      border-radius: 30px 8px 30px 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 250px;
+      height: auto;
+      min-height: unset;
+      /* Hauteur auto selon contenu */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .product-premium-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .product-image-box {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background-color: white;
+      border-radius: 0 0 60px 0;
+      /* Hauteur augmentée pour mieux présenter le produit */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .product-image-box img {
+      width: 160px;
+      height: 160px;
+      border-radius: 0 0 60px 0;
+      object-fit: contain;
+    }
+
+    .rating-badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #dfb332;
+      /* Yellow Gold */
+      color: #000000;
+      /* Black text from description */
+      font-weight: 800;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0 0 0 20px;
+      font-size: 1rem;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .rating-badge::before {
+      content: '★';
+      color: #000;
+      /* Matching description color for black text/icon balance or yellow star? */
+      /* Description says "une étoile jaune" but also "texte 4.5 en noir". 
+         Usually star matches font color if not colored separately */
+    }
+
+    .product-premium-content {
+      padding: 0.5rem 1.4rem 0.6rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 0;
+      background: #250808;
+      /* Compact : seulement titre + poids */
+    }
+
+    .product-premium-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .product-premium-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .product-premium-price {
+      font-family: 'Playfair Display', serif;
+      /* Serif for price too */
+      font-size: 1.5rem;
+      color: #ffffff;
+      font-weight: 700;
+    }
+
+    .product-premium-desc {
+      color: #d1bfae;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .product-premium-actions {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn-toggle {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      /* Light brown/white frame */
+      color: #ffffff;
+      padding: 0.5rem 2rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-toggle.active {
+      background: #c3722e;
+      /* Bronze-copper accent color */
+      border-color: #c3722e;
+      color: #ffffff;
+    }
+
+    /* ─── SOCIAL PROOF ─── */
+    #social-proof {
+      background: var(--coal);
+      text-align: center;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 6px;
+      border: 1px solid rgba(210, 166, 121, 0.2);
+    }
+
+    .testimonial-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(210, 166, 121, 0.3);
+    }
+
+    @media (max-width: 992px) {
+      .testimonial-card {
+        padding: 1.2rem;
+      }
+
+      .testimonial-image {
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        margin-bottom: 1rem;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+    }
+
+    .stars {
+      color: var(--gold);
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .testimonial-text {
+      color: var(--cream);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-author {
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ─── PARTENAIRES ─── */
+    #partenaires {
+      background: #FBF4EC;
+      text-align: center;
+    }
+
+    #partenaires .section-title {
+      color: var(--coal);
+    }
+
+    .partenaires-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .partenaire-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 180px;
+      height: 120px;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(26, 18, 8, 0.05);
+    }
+
+    .partenaire-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    }
+
+    .partenaire-card img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.4s ease;
+    }
+
+    .partenaire-card:hover img {
+      transform: scale(1.15);
+    }
+
+    /* ─── CONTACTS ─── */
+    #contacts {
+      background: #ffffff;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    #contacts .section-title {
+      color: var(--coal);
+    }
+
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--coal);
+      margin-bottom: 1.5rem;
+    }
+
+    .info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .info-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .info-text {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .info-text strong {
+      color: var(--coal);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .info-text a {
+      color: var(--ember);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .info-text a:hover {
+      color: var(--gold);
+    }
+
+    .contact-map {
+      background: #FBF4EC;
+      border-radius: 8px;
+      padding: 2rem;
+      border: 1px solid rgba(26, 18, 8, 0.1);
+    }
+
+    .contact-map iframe {
+      border-radius: 6px;
+      width: 100%;
+      height: 300px;
+      border: 0;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0d0a04;
+      border-top: 1px solid rgba(138, 117, 96, 0.2);
+      padding: 3rem 4% 2rem;
+      text-align: center;
+    }
+
+    .footer-brand .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 900;
+    }
+
+    .footer-bottom {
+      margin-top: 2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(138, 117, 96, 0.1);
+    }
+
+    .footer-bottom p {
+      font-size: 1rem;
+      color: #b0a090;
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 992px) {
+      .nav-center {
+        position: static;
+        transform: none;
+      }
+
+      .nav-right {
+        display: none;
+      }
+
+      .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        max-width: 400px;
+        background: var(--coal);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 105;
+      }
+
+      .nav-links.active {
+        right: 0;
+      }
+
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 1rem 5%;
+      }
+
+      .products-header-visual {
+        display: none;
+      }
+
+      /* Les styles mobile des cartes sont maintenant identiques aux styles desktop */
+      .product-premium-desc {
+        font-size: 0.75rem;
+        margin-bottom: 0.8rem;
+        line-height: 1.4;
+      }
+
+      #about,
+      #contacts {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #CB7E50;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 9999;
+      /* Max priority */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    #backToTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #backToTop:hover {
+      transform: translateY(-5px);
+      background: #b56b41;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="index.html">
+      <img src="images/logo.jpeg" alt="JASMIN CAFé Logo" class="logo-img">
+    </a>
+
+    <div class="nav-center">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#hero">Accueil</a></li>
+        <li><a href="index.html#about">À propos</a></li>
+        <li><a href="index.html#products">Nos Produits</a></li>
+        <li><a href="experience.html">L'Expérience Café</a></li>
+        <li><a href="index.html#contacts">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="nav-right">
+      <a href="tel:+2250749493136" class="nav-signup">Goûtez à l'exception</a>
+    </div>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg">
+      <video autoplay loop muted playsinline class="hero-bg-visual">
+        <source src="images/hero_video_2_cprsd.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-part-left reveal">
+        <h1 class="hero-title-main">ARÔMES<br>D'ÉPICES</h1>
+        <p class="hero-sub-text">
+          Une symphonie d'épices, de racines et de plantes aromatiques. Découvrez l'audacieuse combinaison de nos cafés
+          purs Robusta avec le gingembre, les clous de girofle, le cure-dent Gouro, la citronnelle et le café corsé. Un
+          voyage sensoriel pour éveiller tous vos sens.
+        </p>
+        <a href="tel:+2250555554352" class="btn-gold">ACHETER MAINTENANT</a>
+      </div>
+
+      <div class="hero-part-right reveal">
+        <h1 class="hero-title-main">ÉNERGIE<br>PURE</h1>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text reveal">
+      <div class="section-label">À propos de nous</div>
+      <h2 class="section-title">
+        L'art du café<br><span>cultivé avec passion</span>
+      </h2>
+      <p>
+        Jasmin café est une société ivoirienne de torréfaction basée à Grand-Bassam. Elle a pour ambition de promouvoir
+        le café robusta de Côte d’Ivoire.
+        Cette entreprise a vu le jour à la faveur du projet initié par le conseil du café-cacao.
+        En effet, dans sa volonté de transformer localement le café et le cacao de Côte d’Ivoire, le conseil du
+        café-cacao a formé et installé des unités de torréfaction parmi lesquels figure Jasmin café.
+      <p>
+        Description des activités de Jasmin café
+      </p>
+
+      <p>
+      <ul>
+        <li>Torréfaction du café à l’origine (café robusta) : Transformation du café vert en café moulu, café en grain,
+          capsule, stick.</li>
+        <li>Vente et distribution.</li>
+        <li>Proposition de service café de qualité.</li>
+      </ul>
+      </p>
+
+    </div>
+    <div class="about-visual reveal">
+      <video class="about-video" loop muted playsinline poster="videos/apropos_image_video.png" preload="none">
+        <source src="videos/apropos_video.mp4" type="video/mp4">
+      </video>
+      <div class="about-card">
+        <div class="about-card-title">Une qualité reconnue</div>
+        <p>Nos fèves sont récoltées à la main dans le plus pur respect des traditions, garantissant ainsi un goût
+          authentique et irréprochable.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+
+    <!-- Intro header -->
+    <div class="products-flex-container reveal">
+      <div class="products-intro">
+        <div class="section-label">Nos produits</div>
+        <h2 class="section-title">
+          Des saveurs<br><span>pour chaque instant</span>
+        </h2>
+        <p>
+          Découvrez notre passion pour le café, matérialisée à travers notre gamme exceptionnelle de produits.
+          Nous sommes fiers de vous offrir une expérience gustative inoubliable, en sélectionnant avec soin les
+          meilleurs grains de café issus des plantations de la Côte d'Ivoire.
+        </p>
+        <p>
+          Notre café, fraîchement torréfié, dégage des arômes envoûtants et des saveurs qui éveilleront vos papilles.
+          Quelle que soit votre préférence, nous avons le café idéal pour satisfaire tous les professionnels et amateurs
+          de café, des plus audacieux aux plus raffinés.
+        </p>
+      </div>
+      <img src="images/image_cafe3.png" alt="Grains de café Jasmin">
+    </div>
+
+    <!-- Mobile select -->
+    <div class="products-mobile-select">
+      <p class="select-instruction">Choisissez une catégorie à afficher :</p>
+      <select id="categorySelect">
+        <option value="all">Toutes les catégories</option>
+        <option value="moulu">☕ Café Moulu</option>
+        <option value="grain">🌱 Café en Grain</option>
+        <option value="capsule">💊 Capsules</option>
+        <option value="liqueur">🍶 Liqueurs</option>
+        <option value="machine">⚙️ Machines à café</option>
+      </select>
+    </div>
+
+    <!-- Two-column layout: sidebar + grid -->
+    <div class="products-layout">
+
+      <!-- Sidebar -->
+      <aside class="products-sidebar">
+        <div class="sidebar-title">Nos catégories</div>
+
+        <button class="sidebar-btn" data-cat="all" id="btn-all">
+          <span class="sidebar-icon">🗂️</span> Toutes les catégories
+        </button>
+        <button class="sidebar-btn" data-cat="moulu" id="btn-moulu">
+          <span class="sidebar-icon">☕</span> Café Moulu
+        </button>
+        <button class="sidebar-btn" data-cat="grain" id="btn-grain">
+          <span class="sidebar-icon">🌱</span> Café en Grain
+        </button>
+        <button class="sidebar-btn" data-cat="capsule" id="btn-capsule">
+          <span class="sidebar-icon">💊</span> Capsules
+        </button>
+        <button class="sidebar-btn" data-cat="liqueur" id="btn-liqueur">
+          <span class="sidebar-icon">🍶</span> Liqueurs
+        </button>
+        <button class="sidebar-btn" data-cat="machine" id="btn-machine">
+          <span class="sidebar-icon">⚙️</span> Machines à café
+        </button>
+
+        <div class="sidebar-divider"></div>
+
+        <button class="sidebar-btn sidebar-btn-all" data-cat="all" id="btn-all-bottom">
+          Toutes les catégories
+        </button>
+      </aside>
+
+      <!-- Products grid pane -->
+      <div class="products-grid-pane">
+
+        <!-- GROUPE : CAFÉ MOULU -->
+        <div class="category-group moulu" id="group-moulu">
+          <h2 class="category-title">Café Moulu</h2>
+          <div class="products-grid-inner">
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box">
+                <img src="images/cafe_moulu_espreso_1kg.jpg" alt="Café Moulu Espresso">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Moulu Espresso</h3>
+                  <span>1Kg</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box">
+                <img src="images/cafe_moulu_filtre_1kg.jpg" alt="Café Moulu Filtré 1Kg">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Moulu Filtré</h3>
+                  <span>1Kg</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box">
+                <img src="images/cafe_moulu_filtre_250g.jpg" alt="Café Moulu Filtré 250g">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Moulu Filtré</h3>
+                  <span>250g</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box">
+                <img src="images/cafe_moulu_filtre_150g.jpg" alt="Café Moulu Filtré 150g">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Moulu Filtré</h3>
+                  <span>150g</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- GROUPE : CAFÉ EN GRAIN -->
+        <div class="category-group grain" id="group-grain">
+          <h2 class="category-title">Café en Grain</h2>
+          <div class="products-grid-inner">
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box">
+                <img src="images/cafe_grain_torrifie_1kg.jpg" alt="Café Grains Torréfiés 1Kg">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Grains Torréfiés</h3>
+                  <span>1Kg</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box">
+                <img src="images/cafe_grain_torrifie_500g.jpg" alt="Café Grains Torréfiés 500g">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Grains Torréfiés</h3>
+                  <span>500g</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- GROUPE : CAPSULES -->
+        <div class="category-group capsule" id="group-capsule">
+          <h2 class="category-title">Capsules</h2>
+          <div class="products-grid-inner">
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_blanches_medium.jpg" alt="Café Medium"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Medium</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_blanches_gingembre.jpg" alt="Café Gingembre"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Gingembre</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_blanches_curdentgouro.jpg"
+                  alt="Café Cure-dent Gouro"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Cure-dent Gouro</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_blanches_girofle.jpg" alt="Café Clou de Girofle">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Clou de Girofle</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_blanches_citronnelle.jpg" alt="Café Citronnelle">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Citronnelle</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_blanches_cafecorse.jpg" alt="Café Corsé"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Corsé</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_kaki_medium.jpg" alt="Café Medium Kaki"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Medium</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_kaki_corse.jpg" alt="Café Corsé Kaki"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Corsé</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_kaki_citronnelle.jpg" alt="Café Citronnelle Kaki">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Citronnelle</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_kaki_girofle.jpg" alt="Café Girofle Kaki"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Girofle</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_kaki_curdentgouro.jpg"
+                  alt="Café Cure-dent Gouro Kaki"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Cure-dent Gouro</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/boites_kaki_gingembre.jpg" alt="Café Gingembre Kaki">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Café Gingembre</h3><span>100% Robusta</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- GROUPE : LIQUEURS -->
+        <div class="category-group liqueur" id="group-liqueur">
+          <h2 class="category-title">Liqueurs</h2>
+          <div class="products-grid-inner">
+            <div class="product-premium-card reveal">
+              <div class="product-image-box">
+                <img src="images/rhum_.jpeg" alt="Rhum de Café">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Rhum de Café</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUPE : MACHINES À CAFÉ -->
+        <div class="category-group machine" id="group-machine">
+          <h2 class="category-title">Machines à café</h2>
+          <div class="products-grid-inner">
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/CARIMALI_BLUEDOT_PLUS.jpg" alt="Carimali BlueDot Plus">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Carimali BlueDot Plus</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/machine_cafe_philips.jpeg" alt="Philips Série 3200"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Philips Série 3200<br>Machine Expresso<br>Café à Grains</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/Cafétière_automatique_avec_broyeur_Miogo.jpeg"
+                  alt="Cafétière Miogo"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Cafétière automatique avec broyeur Miogo</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/machine_cafe_gaggia.jpeg" alt="Gaggia Naviglio Deluxe">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Gaggia Naviglio Deluxe</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/Machine_a_the.jpeg" alt="Machine à thé"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Machine à thé</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/Cafétière_10_tasses.jpg" alt="Cafétière 10 tasses"></div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Cafétière 10 tasses</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="product-premium-card reveal">
+              <div class="product-image-box"><img src="images/Percolateur_100_Tasses.jpg" alt="Percolateur 100 Tasses">
+              </div>
+              <div class="product-premium-content">
+                <div class="product-premium-header">
+                  <h3 class="product-premium-title">Percolateur 100 Tasses</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section id="social-proof">
+    <div class="reveal">
+      <div class="section-label">Preuve sociale</div>
+      <h2 class="section-title">
+        <span>Approuvé par les Experts, Porté par nos Planteurs</span>
+      </h2>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial-card reveal">
+        <img src="images/ambassadeur_cafe_france.jpg" alt="Ambassadeur Café France" class="testimonial-image">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Présentation des produits JASMIN CAFÉ à l'ambassade de Côte d'Ivoire en France."
+        </p>
+        <div class="testimonial-author">— Maurice BANDAMAN, Ambassadeur de Côte d'Ivoire en France</div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <img src="images/café_montagne_man.jpg" alt="Ambassadeur Café France" class="testimonial-image">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Excellente qualité de grain, un parfum inégalable. Une vraie fierté pour notre
+          production locale !"</p>
+        <div class="testimonial-author">— Café des Montagnes de Man</div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <img src="images/logo_foprocam.jpg" alt="Ambassadeur Café France" class="testimonial-image">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"Un service toujours à l'écoute."</p>
+        <div class="testimonial-author">— Fédération des Organisations des Producteurs de Café Man</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTENAIRES -->
+  <section id="partenaires">
+    <div class="reveal">
+      <div class="section-label">Nos partenaires</div>
+      <h2 class="section-title">
+        <span>Nos partenaires</span>
+      </h2>
+    </div>
+    <div class="partenaires-grid">
+      <div class="partenaire-card reveal">
+        <img src="images/logo_ministere_agriculture_ci.png" alt="Partenaire 1">
+      </div>
+      <div class="partenaire-card reveal">
+        <img src="images/logo-conseil-cafe-cacao.jpg" alt="Partenaire 2">
+      </div>
+      <div class="partenaire-card reveal">
+        <img src="images/logo_foprocam.jpg" alt="Partenaire 3">
+      </div>
+      <div class="partenaire-card reveal">
+        <img src="images/alora_store.jpg" alt="Partenaire 4">
+      </div>
+      <div class="partenaire-card reveal">
+        <img src="images/logo_boutique_paysanne.jpeg" alt="Partenaire 5">
+      </div>
+      <div class="partenaire-card reveal">
+        <img src="images/logo_cachote.jpg" alt="Partenaire 6">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section id="contacts">
+    <div class="contact-info reveal">
+      <div class="section-label">Nos contacts</div>
+      <h2 class="section-title">
+        Restons en<br><span>contact</span>
+      </h2>
+      <p style="color: #555; margin-bottom: 2rem;">
+        Vous souhaitez en savoir plus sur nos produits ou passer commande ? Contactez notre équipe !
+      </p>
+
+      <div class="info-row">
+        <span class="info-icon">📍</span>
+        <div class="info-text">
+          <strong>Siège social</strong>
+          Côte d'Ivoire - Grand-Bassam
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">📞</span>
+        <div class="info-text">
+          <strong>Téléphones</strong>
+          <a href="tel:+2252721303837">(+225) 27 21 30 38 37</a><br>
+          <a href="tel:+2250749493136">(+225) 07 49 49 31 36</a><br>
+          <a href="tel:+2250777772622">(+225) 07 77 77 26 22</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">💬</span>
+        <div class="info-text">
+          <strong>WhatsApp</strong>
+          <a href="https://wa.me/2250555554352" target="_blank">(+225) 05 55 55 43 52</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon">✉️</span>
+        <div class="info-text">
+          <strong>Email</strong>
+          <a href="mailto:jasmin@jasmincafe.net">jasmin@jasmincafe.net</a>
+        </div>
+      </div>
+      <div class="info-row">
+        <span class="info-icon"><i class="fab fa-facebook" style="color: #1877F2;"></i></span>
+        <div class="info-text">
+          <strong>Facebook</strong>
+          <a href="https://www.facebook.com/profile.php?id=100063807900467" target="_blank">Jasmin Café Officiel</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-map reveal">
+      <h3 style="font-family: 'Playfair Display', serif; color: var(--coal); margin-bottom: 1rem;">
+        L'expérience Jasmin Café près de chez vous
+      </h3>
+      <iframe src="https://www.google.com/maps/d/embed?mid=1-zIIIQ0rrzCkba_WsB0Lj-3bMbcC5s4" allowfullscreen=""
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-brand">
+      <img src="images/logo3.png" alt="JASMIN CAFé Logo" class="logo-img" style="height: 200px; margin-bottom: 1rem;">
+    </div>
+    <div class="footer-bottom">
+      <p>
+        © <span id="currentYear"></span> <strong>JASMIN CAFé</strong> · Tous droits réservés.
+        <br />Unité de production de café Premium - Siège social : Grand-Bassam.
+      </p>
+      <p style="font-size: 0.9rem; margin-top: 1rem; font-weight: bold;">
+        Conception <strong>Côte d'Ivoire Innovation</strong> · Tel : <a href="tel:0757131853"
+          style="color: inherit; text-decoration: none;">070757131853</a>
+      </p>
+    </div>
+  </footer>
+
+  <div id="backToTop" title="Retour en haut">
+    <span style="transform: translateY(-2px);">↑</span>
+  </div>
+
+  <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // ── Category Filter (Sidebar + Mobile Select) ──────────────────────────
+    const allGroups = document.querySelectorAll('.products-grid-pane .category-group');
+    const sidebarBtns = document.querySelectorAll('.products-sidebar .sidebar-btn');
+    const mobileSelect = document.getElementById('categorySelect');
+
+    function filterCategory(cat) {
+      // Show/hide groups
+      allGroups.forEach(group => {
+        if (cat === 'all') {
+          group.classList.add('active');
+        } else {
+          group.classList.toggle('active', group.classList.contains(cat));
+        }
+      });
+
+      // Update sidebar active state
+      sidebarBtns.forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.cat === cat);
+      });
+
+      // Sync mobile select + update its background color
+      if (mobileSelect) {
+        mobileSelect.value = cat;
+        if (cat === 'all') {
+          mobileSelect.style.background = '#ffffff';
+          mobileSelect.style.color = '#411B13';
+          mobileSelect.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23CB7E50'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E\")";
+        } else {
+          mobileSelect.style.background = '#BA7045';
+          mobileSelect.style.color = '#ffffff';
+          mobileSelect.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E\")";
+        }
+        mobileSelect.style.backgroundRepeat = 'no-repeat';
+        mobileSelect.style.backgroundPosition = 'right 1rem center';
+        mobileSelect.style.backgroundSize = '20px';
+      }
+
+      // Re-trigger reveal animation for visible cards
+      document.querySelectorAll('.category-group.active .reveal:not(.visible)').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add('visible');
+        }
+      });
+    }
+
+    // Default: show first group (Café Moulu)
+    filterCategory('moulu');
+
+    // Sidebar clicks
+    sidebarBtns.forEach(btn => {
+      btn.addEventListener('click', () => filterCategory(btn.dataset.cat));
+    });
+
+    // Mobile select change
+    if (mobileSelect) {
+      mobileSelect.addEventListener('change', () => filterCategory(mobileSelect.value));
+    }
+
+    // ── Scroll Reveal ──────────────────────────────────────────────────────
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+
+          // Lazy load video if it's the about video
+          const video = entry.target.querySelector('video');
+          if (video) {
+            video.preload = "auto";
+            video.play().catch(e => console.log("Autoplay blocked or video error:", e));
+          }
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── Mobile Menu Toggle ─────────────────────────────────────────────────
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    const links = document.querySelectorAll('.nav-links a');
+
+    menuToggle.addEventListener('click', () => {
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+      document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    });
+
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // ── Back to Top ────────────────────────────────────────────────────────
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add('show');
+      } else {
+        backToTopBtn.classList.remove('show');
+      }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+
+
+</body>
+
+</html>

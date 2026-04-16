@@ -1,0 +1,5 @@
+- Section Héro
+- Section à propos de nous
+- Section nos produits
+- Section la preuve sociale
+- Section nos contacts (Géolocalisation + bouton itinéraire)

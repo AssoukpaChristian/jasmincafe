@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Le Charbon chez Jeanine – Restaurant Ivoirien Authentique à Riviera Bonoumin, Abidjan</title>
+  <meta name="description" content="Découvrez Le Charbon chez Jeanine à Riviera Bonoumin (Abidjan). Cuisine ivoirienne authentique, viandes et poissons au charbon, sauces maison. Réservez ou commandez en ligne." />
+  <meta name="keywords" content="Restaurant Abidjan, Le Charbon chez Jeanine, Riviera Bonoumin, Cuisine Ivoirienne, Grillades Charbon, Livraison Repas Abidjan, Sauce Graine, Attiéké, Poisson braisé" />
+  <meta name="author" content="Côte d'Ivoire Innovation" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Canonical Link -->
+  <link rel="canonical" href="https://lecharbon-jeanine.com/" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lecharbon-jeanine.com/" />
+  <meta property="og:title" content="Le Charbon chez Jeanine – L'âme de la cuisine ivoirienne à Abidjan" />
+  <meta property="og:description" content="Saveurs authentiques, viandes grillées au charbon et ambiance chaleureuse au cœur de Riviera Bonoumin. Venez goûter l'excellence ivoirienne." />
+  <meta property="og:image" content="https://lecharbon-jeanine.com/Images/Restaurant_hero_section_image_compressed.jpg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://lecharbon-jeanine.com/" />
+  <meta property="twitter:title" content="Le Charbon chez Jeanine – Restaurant Ivoirien à Riviera Bonoumin" />
+  <meta property="twitter:description" content="Découvrez le vrai goût de la Côte d'Ivoire. Grillades au charbon, sauces traditionnelles et accueil familial." />
+  <meta property="twitter:image" content="https://lecharbon-jeanine.com/Images/Restaurant_hero_section_image_compressed.jpg" />
+
+  <!-- Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Le Charbon chez Jeanine",
+    "image": "https://lecharbon-jeanine.com/Images/Restaurant_hero_section_image_compressed.jpg",
+    "url": "https://lecharbon-jeanine.com/",
+    "telephone": "+2250777450542",
+    "priceRange": "$$",
+    "menu": "https://lecharbon-jeanine.com/#menu",
+    "servesCuisine": "Ivoirienne, Africaine",
+    "acceptsReservations": "true",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rue 110, 5ème avenue, Portail 291",
+      "addressLocality": "Riviera Bonoumin, Abidjan",
+      "addressCountry": "CI"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 5.3553159,
+      "longitude": -3.9744489
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "11:00",
+        "closes": "23:00"
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --coal: #1a1208;
+      --ember: #c8410a;
+      --gold: #e8a020;
+      --cream: #fdf6ec;
+      --smoke: #3d2e1a;
+      --ash: #8a7560;
+      --white: #fff8f0;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--coal);
+      color: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      font-weight: 300;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4%;
+      background: linear-gradient(to bottom, rgba(26,18,8,0.95), transparent);
+      backdrop-filter: blur(4px);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      letter-spacing: 0.04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; transition: 0.3s ease; }
+    
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 110;
+      padding: 5px;
+    }
+    .menu-toggle .bar {
+      width: 28px;
+      height: 2px;
+      background-color: var(--cream);
+      transition: 0.3s;
+    }
+
+    .nav-links a {
+      color: var(--cream); font-size: 0.85rem; letter-spacing: 0.1em;
+      text-transform: uppercase; text-decoration: none; font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      background: var(--ember);
+      color: #fff !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 2px;
+      font-weight: 600 !important;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--coal) !important; }
+
+    /* ─── BACK TO TOP ─── */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 50px;
+      height: 50px;
+      background: #E05010;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    .back-to-top:hover {
+      background: var(--gold);
+      transform: translateY(-5px);
+    }
+
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex; align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: #0d0a04;
+      overflow: hidden;
+    }
+    .hero-bg-visual {
+      position: absolute; inset: 0;
+      background: url("Images/Restaurant_hero_section_image_compressed.jpg") center/cover no-repeat;
+      animation: hero-zoom 12s infinite alternate linear;
+    }
+    .hero-bg-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(13,10,4,0.95) 0%, rgba(13,10,4,0.7) 40%, rgba(13,10,4,0.2) 100%);
+      z-index: 1;
+    }
+    @keyframes hero-zoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.15); }
+    }
+    /* Charcoal texture overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+      opacity: 0.25; z-index: 2; pointer-events: none;
+    }
+    /* Ember sparks */
+    .sparks { position: absolute; inset: 0; pointer-events: none; }
+    .spark {
+      position: absolute;
+      width: 3px; height: 3px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: float-spark linear infinite;
+      opacity: 0;
+    }
+    @keyframes float-spark {
+      0%   { transform: translateY(0) translateX(0); opacity: 0; }
+      10%  { opacity: 1; }
+      90%  { opacity: 0.6; }
+      100% { transform: translateY(-120px) translateX(30px); opacity: 0; }
+    }
+    .hero-content {
+      position: relative; z-index: 3;
+      padding: 4rem 4%;
+      max-width: 850px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    #hero-text {
+      max-width: 720px;
+    }
+    #hero-bloc-actions {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-stats {
+      justify-content: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(200,65,10,0.15);
+      border: 1px solid rgba(200,65,10,0.4);
+      color: var(--gold);
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 2px;
+      margin-bottom: 2rem;
+      animation: fade-up 0.8s ease both;
+    }
+    .hero-badge::before { content: '🔥'; font-size: 0.9rem; }
+    h1.hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3.2rem, 8vw, 6.5rem);
+      font-weight: 900;
+      line-height: 1.0;
+      color: var(--white);
+      animation: fade-up 0.8s 0.15s ease both;
+    }
+    h1.hero-title em {
+      font-style: italic;
+      color: var(--gold);
+      display: block;
+    }
+    .hero-sub {
+      margin: 1.8rem auto 0;
+      font-size: 1.1rem;
+      color: var(--cream);
+      line-height: 1.7;
+      max-width: 720px;
+      animation: fade-up 0.8s 0.3s ease both;
+    }
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      justify-content: center;
+      margin-top: 2.8rem;
+      animation: fade-up 0.8s 0.45s ease both;
+    }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: var(--ember);
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem; font-weight: 600;
+      letter-spacing: 0.06em;
+      padding: 1rem 2rem;
+      border: none; border-radius: 3px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 4px 30px rgba(200,65,10,0.35);
+    }
+    .btn-primary:hover { 
+      background: var(--gold); 
+      color: var(--coal);
+      transform: translateY(-3px); 
+      box-shadow: 0 8px 35px rgba(232,160,32,0.45);
+    }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      background: transparent;
+      color: var(--cream);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem; font-weight: 500;
+      padding: 1rem 2rem;
+      border: 1px solid rgba(232,160,32,0.4);
+      border-radius: 3px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-secondary:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--coal);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 35px rgba(232,160,32,0.25);
+    }
+    .hero-stats {
+      display: flex; gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(138,117,96,0.2);
+      animation: fade-up 0.8s 0.6s ease both;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 700;
+      color: var(--gold);
+      display: block;
+    }
+    .stat-label { font-size: 0.8rem; color: var(--cream); letter-spacing: 0.08em; text-transform: uppercase; }
+
+
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── DIVIDER ─── */
+    .section-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--ember), var(--gold), var(--ember), transparent);
+      opacity: 0.4;
+    }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 4%; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--ember);
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+    }
+    .section-title span { color: var(--gold); font-style: italic; }
+
+    /* ─── ABOUT ─── */
+    #about {
+      background: #ffffff;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+      align-items: center;
+    }
+    #about .section-title {
+      color: var(--coal);
+    }
+    .about-text p {
+      color: #555;
+      line-height: 1.8;
+      margin-top: 1.2rem;
+      font-size: 1rem;
+    }
+    .about-features {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .feature-pill {
+      display: flex; align-items: center; gap: 0.7rem;
+      background: #f8f8f8;
+      border: 1px solid rgba(26,18,8,0.1);
+      border-radius: 4px;
+      padding: 0.8rem 1rem;
+      font-size: 0.85rem;
+      color: var(--smoke);
+      transition: all 0.3s;
+    }
+    .feature-pill:hover { border-color: var(--gold); background: #fff; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+    .feature-pill span { font-size: 1.2rem; }
+    .about-visual {
+      position: relative;
+      min-height: 520px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: url("Images/terrasse_compressed.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: flex-end;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .about-card {
+      background: linear-gradient(to top, rgba(26,18,8,0.95) 0%, rgba(26,18,8,0.4) 100%);
+      padding: 1.2rem 2rem 2.5rem;
+      text-align: left;
+      width: 100%;
+    }
+    .about-card-emoji { font-size: 3.5rem; display: block; margin-top: -0.4rem; margin-bottom: 0.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
+    .about-card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; color: var(--gold);
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .about-card p { color: #fff; font-size: 1rem; line-height: 1.6; text-shadow: 0 1px 5px rgba(0,0,0,0.5); font-weight: 400; }
+    .location-badge {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(232,160,32,0.15);
+      border: 1px solid rgba(232,160,32,0.3);
+      border-radius: 4px;
+      padding: 0.7rem 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--cream);
+    }
+
+    /* ─── MENU ─── */
+    #menu { background: #FBF4EC; }
+    #menu .section-title { color: var(--coal); }
+    .menu-intro { max-width: 600px; margin-bottom: 3.5rem; }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .menu-card {
+      background: #ffffff;
+      border: 1px solid rgba(26,18,8,0.1);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .menu-card:hover { 
+      transform: translateY(-6px); 
+      border-color: var(--gold); 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    .menu-card-header {
+      padding: 1.5rem 1.8rem 0.8rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .menu-icon { 
+      width: 60px; height: 60px; 
+      border-radius: 4px; 
+      overflow: hidden; 
+      flex-shrink: 0;
+      background: #231508;
+    }
+    .menu-icon img { width: 100%; height: 100%; object-fit: cover; }
+    .menu-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; color: var(--coal);
+    }
+    .menu-items { padding: 0 1.8rem 1.8rem; }
+    .menu-item {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(138,117,96,0.1);
+      font-size: 0.9rem;
+    }
+    .menu-item:last-child { border-bottom: none; }
+    .item-name { color: #444; }
+    .item-price {
+      color: var(--gold); font-weight: 600;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+    .sauce-grid {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      padding: 0 1.8rem 1.8rem;
+    }
+    .sauce-tag {
+      background: rgba(200,65,10,0.08);
+      border: 1px solid rgba(200,65,10,0.15);
+      color: var(--ember);
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+    }
+    .accomp-grid {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      padding: 0 1.8rem 1.8rem;
+    }
+    .accomp-tag {
+      background: rgba(232,160,32,0.08);
+      border: 1px solid rgba(232,160,32,0.15);
+      color: #6a5a4a;
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 20px;
+    }
+
+    /* ─── SERVICES ─── */
+    #services {
+      background: #F4EEE5;
+    }
+    #services .section-title { color: var(--coal); }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .service-card {
+      background: #ffffff;
+      border: 1px solid rgba(26,18,8,0.1);
+      border-radius: 6px;
+      padding: 1.8rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .service-card:hover {
+      border-color: var(--ember);
+      background: rgba(200,65,10,0.08);
+      transform: translateY(-4px);
+    }
+    .service-icon { font-size: 2.5rem; display: block; margin-bottom: 1rem; }
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem; color: var(--coal);
+      margin-bottom: 0.5rem;
+    }
+    .service-desc { font-size: 0.83rem; color: var(--ash); line-height: 1.5; }
+
+    /* ─── CTA SECTION ─── */
+    #cta {
+      background: linear-gradient(135deg, #1a1208 0%, #2a1205 50%, #1a1208 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(200,65,10,0.15) 0%, transparent 70%);
+    }
+    .cta-content { position: relative; z-index: 2; max-width: 640px; margin: 0 auto; }
+    .cta-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+    }
+    .cta-title em { color: var(--gold); font-style: italic; }
+    .cta-sub { color: var(--ash); font-size: 1rem; line-height: 1.7; margin-bottom: 2.5rem; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .cta-phones {
+      display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;
+      margin-top: 2rem;
+    }
+    .phone-chip {
+      display: flex; align-items: center; gap: 0.5rem;
+      background: rgba(138,117,96,0.15);
+      border: 1px solid rgba(138,117,96,0.3);
+      border-radius: 30px;
+      padding: 0.6rem 1.2rem;
+      color: var(--cream);
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+    .phone-chip:hover { border-color: var(--gold); color: var(--gold); }
+    .phone-chip.whatsapp { 
+      background: #25D366; 
+      border-color: #128C7E; 
+      color: #fff; 
+    }
+    .phone-chip.whatsapp:hover { background: #128C7E; color: #fff; }
+
+    /* ─── ACCESS ─── */
+    #access {
+      background: var(--coal);
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start;
+    }
+    .access-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+    .info-row {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .info-icon { font-size: 1.3rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .info-text { color: var(--ash); font-size: 0.9rem; line-height: 1.6; }
+    .info-text strong { color: var(--cream); display: block; margin-bottom: 0.2rem; }
+    .payment-row {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-top: 0.5rem;
+    }
+    .pay-badge {
+      background: rgba(232,160,32,0.1);
+      border: 1px solid rgba(232,160,32,0.25);
+      color: var(--cream);
+      font-size: 0.78rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 3px;
+    }
+    .access-map {
+      background: linear-gradient(135deg, #231508, #1a1208);
+      border: 1px solid rgba(200,65,10,0.2);
+      border-radius: 8px;
+      padding: 2rem;
+      text-align: center;
+    }
+    .map-placeholder { font-size: 5rem; display: block; margin-bottom: 1rem; }
+    .map-address {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .map-sub { color: var(--ash); font-size: 0.85rem; line-height: 1.6; }
+    .map-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      margin-top: 1.5rem;
+      background: var(--ember);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem; font-weight: 600;
+      padding: 0.7rem 1.5rem;
+      border-radius: 3px;
+      transition: background 0.3s;
+    }
+    .map-link:hover { background: var(--gold); color: var(--coal); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #0d0a04;
+      border-top: 1px solid rgba(138,117,96,0.2);
+      padding: 3rem 4% 2rem;
+    }
+    .footer-top {
+      display: grid; grid-template-columns: 1fr 1fr 1fr;
+      gap: 3rem; margin-bottom: 2.5rem;
+    }
+    .footer-brand .brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; color: var(--gold);
+      display: block; margin-bottom: 0.5rem;
+    }
+    .footer-brand p { color: var(--ash); font-size: 0.85rem; line-height: 1.6; }
+    .footer-col h4 {
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--ember); margin-bottom: 1rem;
+    }
+    .footer-col a, .footer-col p {
+      display: block;
+      color: var(--ash); font-size: 0.87rem; line-height: 1.8;
+      text-decoration: none; transition: color 0.3s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(138,117,96,0.1);
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: var(--ash); }
+    .footer-credit {
+      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 0.8rem; color: var(--ash);
+    }
+    .footer-credit a {
+      color: var(--gold); text-decoration: none; font-weight: 600;
+      transition: color 0.3s;
+    }
+    .footer-credit a:hover { color: var(--ember); }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── UTILS ─── */
+    @media (min-width: 993px) {
+      .hide-on-desktop { display: none !important; }
+    }
+    @media (max-width: 992px) {
+      .hide-on-mobile { display: none !important; }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 992px) {
+      .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        max-width: 400px;
+        background: var(--coal);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+        z-index: 105;
+      }
+      .nav-links.active { right: 0; }
+      .nav-links a { font-size: 1.2rem; }
+      .nav-links a:hover { color: var(--gold); }
+      .menu-toggle { display: flex; }
+      
+      /* Hamburger Animation */
+      .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+      .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+      .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1rem 5%; }
+      #about, #access { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-side { display: none; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .about-features { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#" title="Retour à l'accueil - Le Charbon chez Jeanine">Le CHARBON <span style="color: white;">chez Jeanine</span></a>
+  
+  <!-- Hamburger Button -->
+  <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about" title="En savoir plus sur notre histoire et notre cuisine">Le Restaurant</a></li>
+    <li><a href="#menu" title="Consultez notre carte de spécialités ivoiriennes">Notre Menu</a></li>
+    <li><a href="#services" title="Découvrez nos services de livraison, traiteur et plus">Services</a></li>
+    <li><a href="#cta" class="nav-cta" title="Réservez votre table ou commandez en ligne">Réserver</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-visual"></div>
+    <div class="hero-bg-overlay"></div>
+  </div>
+  <div class="sparks" id="sparks"></div>
+  
+  <div class="hero-content">
+    <div id="hero-text">
+      <div class="hero-badge">Restaurant Authentique · Riviera Bonoumin</div>
+      <h1 class="hero-title">
+        <span style="color: var(--gold); font-size: 3rem;">Restaurant</span> <br/>Le Charbon
+        <em>chez Jeanine</em>
+      </h1>
+      <p class="hero-sub">
+        Au cœur d'Abidjan, un lieu où la tradition ivoirienne conquiert les coeurs.
+        Des saveurs vraies, des ingrédients frais, une chaleur humaine qui ne s'imite pas.
+      </p>
+    </div>
+
+    <div id="hero-bloc-actions">
+      <div class="hero-actions">
+        <a href="tel:+2250777450542" class="btn-primary hide-on-desktop">
+          📞 Réserver une table
+        </a>
+        <a href="#cta" class="btn-primary hide-on-mobile">
+          📞 Réserver une table
+        </a>
+        <a href="#menu" class="btn-secondary">
+          🍽️ Voir le menu
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <span class="stat-num">25+</span>
+          <span class="stat-label">Plats</span>
+        </div>
+        <!-- <div>
+          <span class="stat-num">3</span>
+          <span class="stat-label">Numéros de contact</span>
+        </div> -->
+        <div>
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Fait avec Amour</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- <div class="section-divider"></div> -->
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-text reveal">
+    <div class="section-label">Notre histoire</div>
+    <h2 class="section-title">
+      L'âme ivoirienne<br><span>dans chaque plat</span>
+    </h2>
+    <p>
+      Le Charbon chez Jeanine, c'est bien plus qu'un restaurant. C'est un rendez-vous avec l'authenticité ivoirienne, une adresse que les habitants de Riviera Bonoumin se transmettent comme un secret précieux.
+    </p>
+    <p>
+      Ici, la cuisine se fait à l'ancienne — des sauces mijotées longuement, des viandes grillées au charbon, des poissons frais sélectionnés chaque matin. Chaque assiette raconte une histoire, celle de Jeanine et de sa passion pour la bonne table.
+    </p>
+    <div class="about-features">
+      <div class="feature-pill"><span>♿</span> Accessible PMR</div>
+      <div class="feature-pill"><span>🌿</span> Plats bio disponibles</div>
+      <div class="feature-pill"><span>🚗</span> Parking gratuit</div>
+      <div class="feature-pill"><span>👨‍👩‍👧</span> Adapté familles</div>
+      <!-- <div class="feature-pill"><span>🌍</span> LGBTQ+ friendly</div>
+      <div class="feature-pill"><span>🍺</span> Happy Hour</div> -->
+    </div>
+  </div>
+  <div class="about-visual reveal">
+    <div class="about-card">
+      <span class="about-card-emoji">🔥</span>
+      <div class="about-card-title">Le goût du vrai</div>
+      <p>Terrasse agréable, ambiance calme et branchée. Idéal pour un déjeuner entre collègues, un dîner romantique ou un repas en famille dans une atmosphère chaleureuse.</p>
+      <div class="location-badge">
+        📍 Rue 110, au-dessus de la discothèque · 5ème avenue · Portail 291
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="section-divider"></div> -->
+
+<!-- MENU -->
+<section id="menu">
+  <div class="menu-intro reveal">
+    <div class="section-label">Notre carte</div>
+    <h2 class="section-title">
+      Des saveurs qui<br><span>enflamment les papilles</span>
+    </h2>
+  </div>
+  <div class="menu-grid">
+    <!-- Sauces -->
+    <div class="menu-card reveal">
+      <div class="menu-card-header">
+        <div class="menu-icon">
+          <img src="Images/sauce_graine.jpg" alt="Sauce graine et sauces traditionnelles ivoiriennes - Le Charbon chez Jeanine" loading="lazy">
+        </div>
+        <div class="menu-card-name">Nos Sauces Maison</div>
+      </div>
+      <div class="sauce-grid">
+        <span class="sauce-tag">Sauce graine</span>
+        <span class="sauce-tag">Gouagouassou</span>
+        <span class="sauce-tag">Arachide</span>
+        <span class="sauce-tag">Aubergine</span>
+        <span class="sauce-tag">Claire</span>
+        <span class="sauce-tag">Djoumgblé</span>
+        <span class="sauce-tag">Kôpè</span>
+        <span class="sauce-tag">Tikliti</span>
+        <span class="sauce-tag">Gnangnan</span>
+      </div>
+    </div>
+
+    <!-- Viandes -->
+    <div class="menu-card reveal">
+      <div class="menu-card-header">
+        <div class="menu-icon">
+          <img src="Images/viande.jpeg" alt="Assortiment de viandes braisées au charbon - Spécialités ivoiriennes" loading="lazy">
+        </div>
+        <div class="menu-card-name">Viandes</div>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><span class="item-name">Côtelette · Patte · Poulet fumé</span><span class="item-price">2 500 F</span></div>
+        <div class="menu-item"><span class="item-name">Tête · Queue · Tripes de bœuf</span><span class="item-price">3 500 F</span></div>
+        <div class="menu-item"><span class="item-name">Agouti · Biche · Hérisson</span><span class="item-price">4 000 F</span></div>
+        <div class="menu-item"><span class="item-name">Escargots grillés / sautés</span><span class="item-price">5 000 F</span></div>
+      </div>
+    </div>
+
+    <!-- Poissons -->
+    <div class="menu-card reveal">
+      <div class="menu-card-header">
+        <div class="menu-icon">
+          <img src="Images/poisson.jpeg" alt="Poissons frais grillés et braisés - Saveurs de la lagune Ébrié" loading="lazy">
+        </div>
+        <div class="menu-card-name">Poissons</div>
+      </div>
+      <div class="menu-items">
+        <div class="menu-item"><span class="item-name">Poissons frais (tous types)</span><span class="item-price">2 500 F</span></div>
+        <div class="menu-item"><span class="item-name">Brochet fumé</span><span class="item-price">3 500 F</span></div>
+        <div class="menu-item"><span class="item-name">Merlu fumé</span><span class="item-price">2 500 F</span></div>
+        <div class="menu-item"><span class="item-name">Machoiron fumé</span><span class="item-price">2 500 F</span></div>
+      </div>
+    </div>
+
+    <!-- Accompagnements -->
+    <div class="menu-card reveal">
+      <div class="menu-card-header">
+        <div class="menu-icon">
+          <img src="Images/attieke.jpeg" alt="Attiéké, Foutou et accompagnements traditionnels ivoiriens" loading="lazy">
+        </div>
+        <div class="menu-card-name">Accompagnements</div>
+      </div>
+      <div class="accomp-grid">
+        <span class="accomp-tag">Riz</span>
+        <span class="accomp-tag">Foutou</span>
+        <span class="accomp-tag">Foufou</span>
+        <span class="accomp-tag">Placali</span>
+        <span class="accomp-tag">Attiéké</span>
+        <span class="accomp-tag">Alloco</span>
+        <span class="accomp-tag">Igname</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="section-divider"></div> -->
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="reveal">
+    <div class="section-label">Ce que nous offrons</div>
+    <h2 class="section-title">
+      Tout ce qu'il faut pour<br><span>un moment parfait</span>
+    </h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🛵</span>
+      <div class="service-name">Livraison à domicile</div>
+      <p class="service-desc">Nous livrons vos plats préférés directement chez vous. Livraison sans contact disponible.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🌿</span>
+      <div class="service-name">Terrasse & Plein air</div>
+      <p class="service-desc">Profitez de notre belle terrasse dans une ambiance calme et branchée.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🥂</span>
+      <div class="service-name">Bar & Happy Hour</div>
+      <p class="service-desc">Grand choix de bières, vins, cocktails. Remises Happy Hour sur boissons et restauration.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">👨‍🍳</span>
+      <div class="service-name">Service Traiteur</div>
+      <p class="service-desc">Mariages, anniversaires, événements d'entreprise. Notre équipe se déplace pour vous.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🔒</span>
+      <div class="service-name">Salle privée</div>
+      <p class="service-desc">Un espace privatisable pour vos repas d'affaires ou célébrations en toute intimité.</p>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🌙</span>
+      <div class="service-name">Ouvert le soir</div>
+      <p class="service-desc">Service de restauration ouvert tard en soirée. Idéal pour dîners tardifs et afterwork.</p>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="section-divider"></div> -->
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-content reveal">
+    <div class="section-label">Passez à l'action</div>
+    <h2 class="cta-title">
+      Votre table vous<br><em>attend !</em>
+    </h2>
+    <p class="cta-sub" style="color:#f3dabe">
+      Ne ratez pas une occasion pour un moment inoubliable et savoureux.
+      <br/>Réservez dès maintenant ou passez commande — nous sommes là pour vous régaler, ici ou chez vous.
+    </p>
+    <div class="cta-actions">
+      <a href="tel:+2250777450542" class="btn-primary">📞 Appeler pour réserver</a>
+      <a href="#access" class="btn-secondary">🗺️ Nous trouver</a>
+    </div>
+    <div class="cta-phones">
+      <a href="https://wa.me/2250777450542" class="phone-chip whatsapp" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+      <a href="tel:+2250777450542" class="phone-chip">📱 07 77 45 05 42</a>
+      <a href="tel:+2250707304141" class="phone-chip">📱 07 07 30 41 41</a>
+      <a href="tel:+2250505221414" class="phone-chip">📱 05 05 22 14 14</a>
+    </div>
+  </div>
+</section>
+
+<!-- <div class="section-divider"></div> -->
+
+<!-- ACCESS -->
+<section id="access">
+  <div class="access-info reveal">
+    <div class="section-label">Nous trouver</div>
+    <h3>Riviera Bonoumin, Abidjan</h3>
+    <div class="info-row">
+      <span class="info-icon">📍</span>
+      <div class="info-text">
+        <strong>Adresse</strong>
+        Rue 110, au-dessus de la discothèque<br>
+        5ème avenue — Portail numéro 291<br>
+        Riviera Bonoumin, Abidjan
+      </div>
+    </div>
+    <div class="info-row">
+      <span class="info-icon">📞</span>
+      <div class="info-text">
+        <strong>Téléphone & Livraison</strong>
+        <a href="tel:+2250777450542" style="color:var(--gold);text-decoration:none">07 77 45 05 42</a><br>
+        <a href="tel:+2250707304141" style="color:var(--gold);text-decoration:none">07 07 30 41 41</a><br>
+        <a href="tel:+2250505221414" style="color:var(--gold);text-decoration:none">05 05 22 14 14</a>
+      </div>
+    </div>
+    <div class="info-row">
+      <span class="info-icon">💳</span>
+      <div class="info-text">
+        <strong>Moyens de paiement</strong>
+        <div class="payment-row">
+          <span class="pay-badge">💳 Cartes bancaires</span>
+          <span class="pay-badge">📱 Mobile Money</span>
+          <span class="pay-badge">💵 Espèces</span>
+        </div>
+      </div>
+    </div>
+    <div class="info-row">
+      <span class="info-icon">🚗</span>
+      <div class="info-text">
+        <strong>Stationnement</strong>
+        Parking gratuit sur place et dans la rue
+      </div>
+    </div>
+  </div>
+
+  <div class="access-map reveal">
+    <!-- Carte Google Maps embed gratuite — aucune clé API requise -->
+    <div class="map-frame">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15889.611938696049!2d-3.9744488999999996!3d5.3553159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1ed57a364bd79%3A0x5b26b28445fd33d0!2sRestaurant%20le%20CHARBON%20chez%20Jeanine%20Rivi%C3%A9ra%20Bonoumin%20Rue%20I10%20291!5e0!3m2!1sfr!2sci!4v1773343549361!5m2!1sfr!2sci"
+        width="100%"
+        height="380"
+        style="border:0; border-radius:8px; display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Restaurant Le Charbon chez Jeanine - Riviera Bonoumin Abidjan">
+      </iframe>
+    </div>
+    <!-- Bouton itinéraire — ouvre Google Maps avec destination pré-remplie, sans clé API -->
+    <a
+      href="https://www.google.com/maps/dir/?api=1&destination=5.3553159,-3.9744489&destination_place_id=ChIJeU27NnrW1xQQ0DP9RYSyJls"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="map-link">
+      🧭 Obtenir mon itinéraire
+    </a>
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-bottom">
+    <p style="font-size: 1.1rem;color:#f3dabe">
+      © <span id="currentYear"></span> <span style="color: var(--gold);">Le Charbon</span> <span style="color: #fff;">chez Jeanine</span> · Tous droits réservés. 
+      <br/><strong>Restaurant Africain Abidjan</strong> - Spécialités de Côte d'Ivoire à Riviera Bonoumin. 
+      <br/>Saveurs vraies, viandes braisées, poissons frais et ambiance chaleureuse.
+    </p>
+
+    <div class="footer-credit" style="font-size: 0.9rem;color:#f3dabe">
+      Site réalisé par
+      <a href="mailto:assoukpachristian@gmail.com" title="Côte d'Ivoire Innovation">
+        🌍 Côte d'Ivoire Innovation
+      </a>
+      &nbsp;&nbsp;
+      <a href="tel:+2250757131853">07 57 13 18 53</a>
+    </div>
+  </div>
+</footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Retour en haut">
+    ↑
+  </button>
+
+<script>
+  // Dynamic Year
+  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  // Sparks animation
+  const sparksContainer = document.getElementById('sparks');
+  for (let i = 0; i < 18; i++) {
+    const spark = document.createElement('div');
+    spark.className = 'spark';
+    spark.style.left = Math.random() * 60 + '%';
+    spark.style.bottom = Math.random() * 40 + '%';
+    spark.style.animationDuration = (3 + Math.random() * 4) + 's';
+    spark.style.animationDelay = (Math.random() * 5) + 's';
+    spark.style.width = spark.style.height = (2 + Math.random() * 3) + 'px';
+    spark.style.background = Math.random() > 0.5 ? '#e8a020' : '#c8410a';
+    sparksContainer.appendChild(spark);
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Smooth nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinksList = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinksList.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+    });
+  });
+
+  // Mobile Menu Toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  const links = document.querySelectorAll('.nav-links a');
+
+  menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menuToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Back to Top Logic
+  const backToTop = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop.classList.add('visible');
+    } else {
+      backToTop.classList.remove('visible');
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+</body>
+</html>

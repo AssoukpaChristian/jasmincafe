@@ -1,0 +1,34 @@
+- Section Héro (accroche + positionnement)
+	*Titre : Plongez au cœur de notre univers café
+	*Sous-titre : Production locale, événements, formations et expériences uniques autour du café ivoirien.
+
+	CTA (important) :
+	👉 Demander un service café
+	👉 Nous contacter
+
+- Section
+	*Titre: Bien plus qu’un café, une expérience
+
+🎪 Salons & événements 
+Titre : Notre présence sur les grands événements
+Sous-titre : Nous participons à des salons nationaux et internationaux pour promouvoir le café ivoirien.
+👉 Galerie (images)
+
+
+🎓 3.2 Formations
+Titre : Former la nouvelle génération
+Sous-titre : Nous accompagnons professionnels et passionnés dans la maîtrise du café.
+👉 Galerie (images)
+👉 CTA : Vous aimeriez des formations
+
+☕ 3.3 Services café (TRÈS IMPORTANT = business)
+Titre : Service café pour vos événements
+Sous-titre : Offrez une expérience café premium à vos invités (mariages, entreprises, salons…).
+👉 Galerie (images)
+👉 CTA (fort) : Réserver un service café
+
+🚜 3.4 Visites & immersion
+Titre :Découvrez nos plantations et ateliers
+Sous-titre :Vivez une immersion complète dans l’univers du café, de la fève à la tasse.
+👉 Galerie (images)
+👉 CTA : Organiser une visite
