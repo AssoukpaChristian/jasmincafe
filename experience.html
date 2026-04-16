@@ -331,7 +331,19 @@
       }
     }
 
-    /* ─── SECTION BASE ─── */
+    /* ─── SECTION EXPERIENCES ─── */
+    #experiences {
+      padding: 8rem 0;
+      background: #F4EEE5;
+    }
+
+    @media (max-width: 768px) {
+      #experiences {
+        padding: 4rem 0;
+      }
+    }
+
+    /* ─── EXPERIENCE BLOCKS ─── */
     section {
       padding: 6rem 4%;
     }
@@ -359,11 +371,13 @@
       font-style: italic;
     }
 
-    /* ─── EXPERIENCE BLOCKS ─── */
     .experience-list {
       display: flex;
       flex-direction: column;
       gap: 6rem;
+      padding: 0 4%; /* Ajout de padding pour éviter que les blocs touchent les bords */
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
     .exp-block {
@@ -571,7 +585,7 @@
 
       /* Tablette : 2 ou 3 images par ligne */
       .exp-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(calc(33.333% - 1.2rem), 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         padding: 1.5rem;
         flex: none;
       }
@@ -582,11 +596,16 @@
     }
 
     @media (max-width: 576px) {
+      .experience-list {
+        padding: 0 1rem; /* Moins de padding sur mobile */
+        gap: 3rem;       /* Moins d'espace entre les blocs */
+      }
 
-      /* Mobile : 1 ou 2 images par ligne */
+      /* Mobile : 1 ou 2 images par ligne selon largeur */
       .exp-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 0.8rem;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 0.6rem;
+        padding: 1rem;
       }
 
       .gallery-img {
@@ -809,7 +828,7 @@
   </section>
 
   <!-- SECTION EXPERIENCES -->
-  <section id="experiences" style="background:#F4EEE5;">
+  <section id="experiences">
     <div class="reveal" style="text-align: center; margin-bottom: 4rem;">
       <h2 class="section-title" style="color: var(--coal);">
         Bien plus qu’un café,<br><span>une expérience unique à jamais gravée dans votre mémoire</span>
@@ -960,7 +979,7 @@
       </p>
       <p style="font-size: 0.9rem; margin-top: 1rem; font-weight: bold;">
         Conception <strong>Côte d'Ivoire Innovation</strong> · Tel : <a href="tel:0757131853"
-          style="color: inherit; text-decoration: none;">070757131853</a>
+          style="color: inherit; text-decoration: none;">0757131853</a>
       </p>
     </div>
   </footer>
@@ -981,7 +1000,10 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12 });
+    }, { 
+      threshold: 0.05, /* Seuil abaissé à 5% pour les blocs très longs sur mobile */
+      rootMargin: '0px 0px -50px 0px' 
+    });
     revealEls.forEach(el => observer.observe(el));
 
     // ── Mobile Menu Toggle ─────────────────────────────────────────────────
