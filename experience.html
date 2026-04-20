@@ -154,6 +154,39 @@
       color: #1a1208 !important;
     }
 
+    /* Bouton WhatsApp Lumineux */
+    .btn-whatsapp-glow {
+      background: #25D366 !important;
+      color: #fff !important;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+      animation: whatsapp-pulse 2s infinite;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-whatsapp-glow:hover {
+      background: #20ba5a !important;
+      color: #fff !important;
+      box-shadow: 0 0 25px rgba(37, 211, 102, 0.7);
+      transform: scale(1.05);
+    }
+
+    @keyframes whatsapp-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
     /* ─── HERO (Synced with Index responsive video/bg logic) ─── */
     #hero {
       min-height: 100vh;
@@ -248,8 +281,71 @@
       text-align: left;
     }
 
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
     .hero-part-right {
       text-align: right;
+    }
+
+    /* ─── Hero Terroir Badge ─── */
+    .hero-terroir-box {
+      margin-top: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-map-stylized {
+      width: 280px;
+      height: auto;
+      filter: drop-shadow(0 0 25px rgba(218, 184, 95, 0.5));
+      opacity: 0.9;
+      animation: float-map 6s ease-in-out infinite;
+      transition: all 0.5s ease;
+    }
+
+    .hero-map-stylized:hover {
+      filter: drop-shadow(0 0 35px rgba(218, 184, 95, 0.8));
+      transform: scale(1.05) rotate(2deg);
+      opacity: 1;
+    }
+
+    .origin-label {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #DAB85F 0%, #B4944A 100%);
+      color: #1a1208;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes float-map {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero-map-stylized {
+        width: 200px;
+      }
     }
 
     @media (max-width: 992px) {
@@ -285,6 +381,10 @@
       .hero-part-left,
       .hero-part-right {
         text-align: center;
+      }
+
+      .hero-actions {
+        justify-content: center;
       }
     }
 
@@ -375,7 +475,8 @@
       display: flex;
       flex-direction: column;
       gap: 6rem;
-      padding: 0 4%; /* Ajout de padding pour éviter que les blocs touchent les bords */
+      padding: 0 4%;
+      /* Ajout de padding pour éviter que les blocs touchent les bords */
       max-width: 1400px;
       margin: 0 auto;
     }
@@ -597,8 +698,10 @@
 
     @media (max-width: 576px) {
       .experience-list {
-        padding: 0 1rem; /* Moins de padding sur mobile */
-        gap: 3rem;       /* Moins d'espace entre les blocs */
+        padding: 0 1rem;
+        /* Moins de padding sur mobile */
+        gap: 3rem;
+        /* Moins d'espace entre les blocs */
       }
 
       /* Mobile : 1 ou 2 images par ligne selon largeur */
@@ -790,7 +893,9 @@
     </div>
 
     <div class="nav-right">
-      <a href="tel:+2250749493136" class="nav-signup">Goûtez à l'exception</a>
+      <a href="https://wa.me/2250555554352" target="_blank" class="nav-signup btn-whatsapp-glow">
+        <i class="fas fa-coffee"></i>Commander
+      </a>
     </div>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
@@ -816,14 +921,18 @@
           Production locale, événements, formations et expériences uniques autour du café ivoirien.
           Vivez une immersion totale dans l’art de la torréfaction.
         </p>
-        <div class="hero-actions" style="display: flex; gap: 1rem; margin-top: 1rem;">
+        <div class="hero-actions">
           <a href="tel:+2250749493136" class="btn-gold" style="padding: 1rem 2rem; font-size: 0.9rem;">Services Café</a>
         </div>
       </div>
 
-      <!-- <div class="hero-part-right reveal">
-        <h1 class="hero-title-main">ÉNERGIE<br />PURE</h1>
-      </div> -->
+      <div class="hero-part-right reveal">
+        <h1 class="hero-title-main">PURE<br><em>ORIGINE</em></h1>
+        <div class="hero-terroir-box">
+          <img src="images/carte_ci.png" alt="Origine Côte d'Ivoire" class="hero-map-stylized">
+          <div class="origin-label">Pur Terroir Ivoirien</div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -970,16 +1079,18 @@
   <!-- FOOTER -->
   <footer>
     <div class="footer-brand">
-      <img src="images/logo3_cprsd.png" alt="JASMIN CAFé Logo" class="logo-img" style="height: 200px; margin-bottom: 1rem;">
+      <img src="images/logo3_cprsd.png" alt="JASMIN CAFé Logo" class="logo-img"
+        style="height: 200px; margin-bottom: 1rem; background: white; border-radius: 30%; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
     </div>
     <div class="footer-bottom">
       <p>
-        © <span id="currentYear"></span> <strong>JASMIN CAFé</strong> · Tous droits réservés.
+        © <span id="currentYear"></span> <strong>JASMIN CAFÉ</strong> · Tous droits réservés.
         <br />Unité de production de café Premium - Siège social : Grand-Bassam.
       </p>
       <p style="font-size: 0.9rem; margin-top: 1rem; font-weight: bold;">
-        Conception <strong>Côte d'Ivoire Innovation</strong> · Tel : <a href="tel:0757131853"
-          style="color: inherit; text-decoration: none;">0757131853</a>
+        <a href="tel:0757131853" style="color: inherit; text-decoration: none;">
+          Conception <strong>Côte d'Ivoire Innovation</strong>
+        </a>
       </p>
     </div>
   </footer>
@@ -1000,9 +1111,9 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { 
+    }, {
       threshold: 0.05, /* Seuil abaissé à 5% pour les blocs très longs sur mobile */
-      rootMargin: '0px 0px -50px 0px' 
+      rootMargin: '0px 0px -50px 0px'
     });
     revealEls.forEach(el => observer.observe(el));
 

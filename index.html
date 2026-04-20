@@ -162,12 +162,127 @@
       border-radius: 30px;
       font-weight: 600 !important;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .nav-signup:hover {
       background: #fff;
       color: #1a1208 !important;
+      transform: translateY(-2px);
+    }
+
+    /* Bouton WhatsApp Lumineux */
+    .btn-whatsapp-glow {
+      background: #25D366 !important;
+      color: #fff !important;
+      box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+      animation: whatsapp-pulse 2s infinite;
+      border: none;
+    }
+
+    .btn-whatsapp-glow:hover {
+      background: #20ba5a !important;
+      color: #fff !important;
+      box-shadow: 0 0 25px rgba(37, 211, 102, 0.7);
+      transform: scale(1.05);
+    }
+
+    @keyframes whatsapp-pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+
+      70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+
+    .hero-map {
+      width: 320px;
+      height: auto;
+      margin-top: 1.5rem;
+      margin-left: auto;
+      display: block;
+      filter: drop-shadow(0 0 12px rgba(218, 184, 95, 0.4));
+      opacity: 0.9;
+      transition: all 0.3s ease;
+    }
+
+    .hero-map:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 992px) {
+      .hero-map {
+        width: 220px;
+        margin: 1.5rem auto 0;
+      }
+    }
+
+    .hero-title-group {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── Hero Terroir Badge ─── */
+    .hero-terroir-box {
+      margin-top: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-map-stylized {
+      width: 280px;
+      height: auto;
+      filter: drop-shadow(0 0 25px rgba(218, 184, 95, 0.5));
+      opacity: 0.9;
+      animation: float-map 6s ease-in-out infinite;
+      transition: all 0.5s ease;
+    }
+
+    .hero-map-stylized:hover {
+      filter: drop-shadow(0 0 35px rgba(218, 184, 95, 0.8));
+      transform: scale(1.05) rotate(2deg);
+      opacity: 1;
+    }
+
+    .origin-label {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, #DAB85F 0%, #B4944A 100%);
+      color: #1a1208;
+      padding: 0.4rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    @keyframes float-map {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @media (max-width: 992px) {
+      .hero-map-stylized {
+        width: 200px;
+      }
     }
 
     /* ─── HERO ─── */
@@ -508,7 +623,14 @@
       font-weight: 500;
     }
 
-    .products-mobile-select select {
+    /* ── Custom Select styling ── */
+    .custom-select-wrapper {
+      position: relative;
+      user-select: none;
+      width: 100%;
+    }
+
+    .custom-select-trigger {
       width: 100%;
       padding: 0.9rem 1.2rem;
       font-family: 'Playfair Display', serif;
@@ -518,14 +640,69 @@
       border: 2px solid #CB7E50;
       border-radius: 10px;
       cursor: pointer;
-      appearance: none;
-      -webkit-appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23CB7E50'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-      background-repeat: no-repeat;
-      background-position: right 1rem center;
-      background-size: 20px;
-      padding-right: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       box-shadow: 0 2px 12px rgba(203, 126, 80, 0.12);
+      transition: all 0.3s ease;
+    }
+
+    .custom-select-trigger::after {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #CB7E50;
+      transition: transform 0.3s ease;
+    }
+
+    .custom-select-wrapper.open .custom-select-trigger::after {
+      transform: rotate(180deg);
+    }
+
+    .custom-options-container {
+      position: absolute;
+      top: calc(100% + 5px);
+      left: 0;
+      right: 0;
+      background: #ffffff;
+      border: 1px solid #CB7E50;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      overflow: hidden;
+      display: none;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .custom-select-wrapper.open .custom-options-container {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .custom-option {
+      padding: 0.9rem 1.2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: #411B13;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .custom-option:hover {
+      background-color: #BA7045;
+      /* Marron au survol demandé */
+      color: #ffffff;
+    }
+
+    .custom-option.selected {
+      background-color: #FBF4EC;
+      color: #CB7E50;
+      font-weight: 600;
     }
 
     /* ── Two-column layout ── */
@@ -1202,7 +1379,9 @@
     </div>
 
     <div class="nav-right">
-      <a href="tel:+2250749493136" class="nav-signup">Goûtez à l'exception</a>
+      <a href="https://wa.me/2250555554352" target="_blank" class="nav-signup btn-whatsapp-glow">
+        <i class="fas fa-coffee"></i>Commander
+      </a>
     </div>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">
@@ -1233,6 +1412,10 @@
 
       <div class="hero-part-right reveal">
         <h1 class="hero-title-main">ÉNERGIE<br>PURE</h1>
+        <div class="hero-terroir-box">
+          <img src="images/carte_ci.png" alt="Origine Côte d'Ivoire" class="hero-map-stylized">
+          <div class="origin-label">Pur Terroir Ivoirien</div>
+        </div>
       </div>
     </div>
   </section>
@@ -1303,14 +1486,31 @@
     <!-- Mobile select -->
     <div class="products-mobile-select">
       <p class="select-instruction">Choisissez une catégorie à afficher :</p>
-      <select id="categorySelect">
+
+      <!-- Hidden native select for JS compatibility -->
+      <select id="categorySelect" style="display: none;">
         <option value="all">Toutes les catégories</option>
-        <option value="moulu">☕ Café Moulu</option>
-        <option value="grain">🌱 Café en Grain</option>
-        <option value="capsule">💊 Capsules</option>
-        <option value="liqueur">🍶 Liqueurs</option>
-        <option value="machine">⚙️ Machines à café</option>
+        <option value="moulu">Café Moulu</option>
+        <option value="grain">Café en Grain</option>
+        <option value="capsule">Capsules</option>
+        <option value="liqueur">Liqueurs</option>
+        <option value="machine">Machines à café</option>
       </select>
+
+      <!-- Custom Dropdown Implementation -->
+      <div class="custom-select-wrapper" id="customSelectWrapper">
+        <div class="custom-select-trigger" id="customSelectTrigger">
+          <span>Toutes les catégories</span>
+        </div>
+        <div class="custom-options-container">
+          <div class="custom-option selected" data-value="all">Toutes les catégories</div>
+          <div class="custom-option" data-value="moulu">Café Moulu</div>
+          <div class="custom-option" data-value="grain">Café en Grain</div>
+          <div class="custom-option" data-value="capsule">Capsules</div>
+          <div class="custom-option" data-value="liqueur">Liqueurs</div>
+          <div class="custom-option" data-value="machine">Machines à café</div>
+        </div>
+      </div>
     </div>
 
     <!-- Two-column layout: sidebar + grid -->
@@ -1327,10 +1527,12 @@
           <span class="sidebar-icon">☕</span> Café Moulu
         </button>
         <button class="sidebar-btn" data-cat="grain" id="btn-grain">
-          <span class="sidebar-icon">🌱</span> Café en Grain
+          <span class="sidebar-icon"><img src="images/image_cafe3.png" alt=""
+              style="width: 1.1rem; height: 1.1rem; object-fit: contain;"></span> Café en Grain
         </button>
         <button class="sidebar-btn" data-cat="capsule" id="btn-capsule">
-          <span class="sidebar-icon">💊</span> Capsules
+          <span class="sidebar-icon"><img src="images/capsule_ico.png" alt=""
+              style="width: 1.1rem; height: 1.1rem; object-fit: contain;"></span> Capsules
         </button>
         <button class="sidebar-btn" data-cat="liqueur" id="btn-liqueur">
           <span class="sidebar-icon">🍶</span> Liqueurs
@@ -1678,7 +1880,7 @@
       <div class="testimonial-card reveal">
         <img src="images/cafe_montagne_man.jpg" alt="Ambassadeur Café France" class="testimonial-image">
         <div class="stars">★★★★★</div>
-        <p class="testimonial-text">"Excellente qualité de grain, un parfum inégalable. Une vraie fierté pour notre
+        <p class="testimonial-text">"Excellente qualité de grain, un arôme inégalable. Une vraie fierté pour notre
           production locale !"</p>
         <div class="testimonial-author">— Café des Montagnes de Man</div>
       </div>
@@ -1734,30 +1936,30 @@
       </p>
 
       <div class="info-row">
-        <span class="info-icon">📍</span>
+        <span class="info-icon"><i class="fas fa-map-marker-alt" style="color: #CB7E50;"></i></span>
         <div class="info-text">
           <strong>Siège social</strong>
           Côte d'Ivoire - Grand-Bassam
         </div>
       </div>
       <div class="info-row">
-        <span class="info-icon">📞</span>
+        <span class="info-icon"><i class="fas fa-phone-alt" style="color: #CB7E50;"></i></span>
         <div class="info-text">
           <strong>Téléphones</strong>
-          <a href="tel:+2252721303837">(+225) 27 21 30 38 37</a><br>
+          <a href="tel:+2252721303837">(+225) 27 21 73 81 83</a><br>
           <a href="tel:+2250749493136">(+225) 07 49 49 31 36</a><br>
           <a href="tel:+2250777772622">(+225) 07 77 77 26 22</a>
         </div>
       </div>
       <div class="info-row">
-        <span class="info-icon">💬</span>
+        <span class="info-icon"><i class="fab fa-whatsapp" style="color: #25D366;"></i></span>
         <div class="info-text">
           <strong>WhatsApp</strong>
           <a href="https://wa.me/2250555554352" target="_blank">(+225) 05 55 55 43 52</a>
         </div>
       </div>
       <div class="info-row">
-        <span class="info-icon">✉️</span>
+        <span class="info-icon"><i class="fas fa-envelope" style="color: #CB7E50;"></i></span>
         <div class="info-text">
           <strong>Email</strong>
           <a href="mailto:jasmin@jasmincafe.net">jasmin@jasmincafe.net</a>
@@ -1794,8 +1996,9 @@
         <br />Unité de production de café Premium - Siège social : Grand-Bassam.
       </p>
       <p style="font-size: 0.9rem; margin-top: 1rem; font-weight: bold;">
-        Conception <strong>Côte d'Ivoire Innovation</strong> · Tel : <a href="tel:0757131853"
-          style="color: inherit; text-decoration: none;">0757131853</a>
+        <a href="tel:0757131853" style="color: inherit; text-decoration: none;">
+          Conception <strong>Côte d'Ivoire Innovation</strong>
+        </a>
       </p>
     </div>
   </footer>
@@ -1813,6 +2016,17 @@
     const mobileSelect = document.getElementById('categorySelect');
 
     function filterCategory(cat) {
+      // Mobile Custom Select Sync
+      const customWrapper = document.getElementById('customSelectWrapper');
+      const customTrigger = document.getElementById('customSelectTrigger');
+      if (customTrigger) {
+        const selectedOpt = customWrapper.querySelector(`[data-value="${cat}"]`);
+        customTrigger.querySelector('span').textContent = selectedOpt ? selectedOpt.textContent : 'Choisir...';
+        customWrapper.querySelectorAll('.custom-option').forEach(opt => {
+          opt.classList.toggle('selected', opt.dataset.value === cat);
+        });
+      }
+
       // Show/hide groups
       allGroups.forEach(group => {
         if (cat === 'all') {
@@ -1827,21 +2041,9 @@
         btn.classList.toggle('active', btn.dataset.cat === cat);
       });
 
-      // Sync mobile select + update its background color
+      // Sync mobile select
       if (mobileSelect) {
         mobileSelect.value = cat;
-        if (cat === 'all') {
-          mobileSelect.style.background = '#ffffff';
-          mobileSelect.style.color = '#411B13';
-          mobileSelect.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='%23CB7E50'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E\")";
-        } else {
-          mobileSelect.style.background = '#BA7045';
-          mobileSelect.style.color = '#ffffff';
-          mobileSelect.style.backgroundImage = "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E\")";
-        }
-        mobileSelect.style.backgroundRepeat = 'no-repeat';
-        mobileSelect.style.backgroundPosition = 'right 1rem center';
-        mobileSelect.style.backgroundSize = '20px';
       }
 
       // Re-trigger reveal animation for visible cards
@@ -1860,9 +2062,33 @@
       btn.addEventListener('click', () => filterCategory(btn.dataset.cat));
     });
 
-    // Mobile select change
+    // Native Mobile select fallback listener
     if (mobileSelect) {
       mobileSelect.addEventListener('change', () => filterCategory(mobileSelect.value));
+    }
+
+    // Custom Select Initialization
+    const customWrapper = document.getElementById('customSelectWrapper');
+    const customTrigger = document.getElementById('customSelectTrigger');
+    const customOptions = document.querySelectorAll('.custom-option');
+
+    if (customTrigger) {
+      customTrigger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        customWrapper.classList.toggle('open');
+      });
+
+      customOptions.forEach(option => {
+        option.addEventListener('click', function () {
+          const val = this.dataset.value;
+          filterCategory(val);
+          customWrapper.classList.remove('open');
+        });
+      });
+
+      document.addEventListener('click', () => {
+        customWrapper.classList.remove('open');
+      });
     }
 
     // ── Scroll Reveal ──────────────────────────────────────────────────────
