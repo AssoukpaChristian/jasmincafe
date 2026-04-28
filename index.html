@@ -935,7 +935,7 @@
       .products-mobile-select {
         display: block;
         position: sticky;
-        top: 115px;
+        top: 120px;
         z-index: 20;
         background: #FBF4EC;
         padding: 0.5rem 0;
@@ -945,6 +945,16 @@
         margin-right: -4%;
         padding-left: 4%;
         padding-right: 4%;
+        box-shadow: 0 10px 10px -10px rgba(0,0,0,0.05); /* Subtle shadow when sticky */
+      }
+
+      .category-title {
+        font-size: 1.6rem;
+        margin: 2rem 0 1rem;
+      }
+
+      .products-grid-inner {
+        gap: 1.2rem;
       }
     }
 
@@ -1569,7 +1579,7 @@
       <aside class="products-sidebar">
         <div class="sidebar-title">Nos catégories</div>
 
-        <button class="sidebar-btn" data-cat="all" id="btn-all">
+        <button class="sidebar-btn active" data-cat="all" id="btn-all">
           <span class="sidebar-icon">🗂️</span> Toutes les catégories
         </button>
         <button class="sidebar-btn" data-cat="moulu" id="btn-moulu">
@@ -1592,7 +1602,7 @@
 
         <div class="sidebar-divider"></div>
 
-        <button class="sidebar-btn sidebar-btn-all" data-cat="all" id="btn-all-bottom">
+        <button class="sidebar-btn sidebar-btn-all active" data-cat="all" id="btn-all-bottom">
           Toutes les catégories
         </button>
       </aside>
@@ -1601,7 +1611,7 @@
       <div class="products-grid-pane">
 
         <!-- GROUPE : CAFÉ MOULU -->
-        <div class="category-group moulu" id="group-moulu">
+        <div class="category-group moulu active" id="group-moulu">
           <h2 class="category-title">Café Moulu</h2>
           <div class="products-grid-inner">
 
@@ -1657,7 +1667,7 @@
         </div>
 
         <!-- GROUPE : CAFÉ EN GRAIN -->
-        <div class="category-group grain" id="group-grain">
+        <div class="category-group grain active" id="group-grain">
           <h2 class="category-title">Café en Grain</h2>
           <div class="products-grid-inner">
 
@@ -1689,7 +1699,7 @@
         </div>
 
         <!-- GROUPE : CAPSULES -->
-        <div class="category-group capsule" id="group-capsule">
+        <div class="category-group capsule active" id="group-capsule">
           <h2 class="category-title">Capsules</h2>
           <div class="products-grid-inner">
 
@@ -1811,7 +1821,7 @@
         </div>
 
         <!-- GROUPE : LIQUEURS -->
-        <div class="category-group liqueur" id="group-liqueur">
+        <div class="category-group liqueur active" id="group-liqueur">
           <h2 class="category-title">Liqueurs</h2>
           <div class="products-grid-inner">
             <div class="product-premium-card reveal">
@@ -1828,7 +1838,7 @@
         </div>
 
         <!-- GROUPE : MACHINES À CAFÉ -->
-        <div class="category-group machine" id="group-machine">
+        <div class="category-group machine active" id="group-machine">
           <h2 class="category-title">Machines à café</h2>
           <div class="products-grid-inner">
 
@@ -2103,8 +2113,8 @@
       });
     }
 
-    // Default: show first group (Café Moulu)
-    filterCategory('moulu');
+    // Default: Toutes les catégories
+    filterCategory('all');
 
     // Sidebar clicks
     sidebarBtns.forEach(btn => {
